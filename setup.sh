@@ -1,9 +1,16 @@
 #!/bin/sh
-cd $(dirname $0)
-for dotfile in .?*
+DOTFILES=$(cd $(dirname $0) && pwd)
+
+# submodule update
+# ----------------------------------------------------------------------
+cd $DOTFILES
+git submodule update --init --recursive
+cd - > /dev/null
+
+for DOTFILES in .?*
 do
-    if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.gitmodules' ]
+    if [ $DOTFILES != '..' ] && [ $DOTFILES != '.git' ] && [ $DOTFILES != '.gitmodules' ]
     then
-        ln -Fis "$PWD/$dotfile" $HOME
+        ln -Fis "$PWD/$DOTFILES" $HOME
     fi
 done
