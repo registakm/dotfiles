@@ -73,6 +73,12 @@ alias ls="ls -GAF"
 alias ll="ls -l"
 
 # --------------------------------
+# -------------- go --------------
+# --------------------------------
+export GOPATH=$HOME
+export PATH=$PATH:$GOPATH/bin
+
+# --------------------------------
 # ----------- rbenv --------------
 # --------------------------------
 export PATH=$HOME/.rbenv/bin:$PATH
@@ -82,3 +88,14 @@ eval "$(rbenv init -)"
 # ----------- nodebrew -----------
 # --------------------------------
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
