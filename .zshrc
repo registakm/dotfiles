@@ -5,14 +5,14 @@
 # --------------------------------
 # ------- zsh-completions --------
 # --------------------------------
-if [ -e /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath)
+if [ -f $(brew --prefix git)/share/zsh-completions ]; then
+  fpath=($(brew --prefix git)/share/zsh-completions $fpath)
 fi
 # --------------------------------
 # ---- zsh-syntax-highlighting ---
 # --------------------------------
-if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f ${HOME}/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ${HOME}/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # --------------------------------
