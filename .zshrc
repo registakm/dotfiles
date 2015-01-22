@@ -18,6 +18,14 @@ if [ -f ~/.zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 fi
 
 # --------------------------------
+# ---- peco setting---
+# --------------------------------
+if [[ -f `command -v peco` ]] ; then
+  source ~/.zsh.d/peco.zsh
+  alias peco='peco --rcfile=~/.config/peco/config.json'
+fi
+
+# --------------------------------
 # ----------- PROMPT -------------
 # --------------------------------
 autoload -Uz vcs_info
