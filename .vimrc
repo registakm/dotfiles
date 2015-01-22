@@ -13,9 +13,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " # installed bundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree'
-
+NeoBundle 'tomasr/molokai'
 
 call neobundle#end()
+
 
 filetype plugin indent on
 NeoBundleCheck
@@ -67,3 +68,10 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+" ## colorscheme
+colorscheme molokai
+syntax on
+let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark
