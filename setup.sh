@@ -1,7 +1,7 @@
 #!/bin/sh
 DOTFILES=$(cd $(dirname $0) && pwd)
 
-FILELIST = '
+FILELIST='
 .vim
 .gitignore
 .gitconfig
