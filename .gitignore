@@ -1,4 +1,25 @@
 .DS_Store
 *.log
 *.swp
-.vim/bundle
+
+# 全てのファイルを一度、無視
+/*
+/.*
+
+# "無視したくないファイル"は以下に"![ファイル名]"で指定
+##### Gitで管理するファイルリスト #####
+!/.bash_profile
+!/.bashrc
+!/.vimrc
+!/.vim
+!/.gitignore
+!/.gitconfig
+!/.gitmodules
+!/.git-completion.bash
+!/.zshrc
+!/.zshenv
+!/.zsh.d
+!/.config
+
+# 上記に"無視したくないファイル"としてリスト化した中から、さらに"無視したいファイル"を指定
+/.vim/bundle

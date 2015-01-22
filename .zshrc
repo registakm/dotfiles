@@ -5,14 +5,16 @@
 # --------------------------------
 # ------- zsh-completions --------
 # --------------------------------
-if [ -f $(brew --prefix git)/share/zsh-completions ]; then
-  fpath=($(brew --prefix git)/share/zsh-completions $fpath)
+if [ -f ~/.zsh.d/zsh-completions/src ]; then
+  fpath=(~/.zsh.d/zsh-completions/src ~/.zsh.d/custom-completions $fpath)
 fi
+
+
 # --------------------------------
 # ---- zsh-syntax-highlighting ---
 # --------------------------------
-if [ -f ${HOME}/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ${HOME}/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f ~/.zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # --------------------------------
@@ -72,30 +74,3 @@ bindkey "^N" history-beginning-search-forward-end
 alias ls="ls -GAF"
 alias ll="ls -l"
 alias gs='git status --short --branch'
-# --------------------------------
-# -------------- go --------------
-# --------------------------------
-export GOPATH=$HOME
-export PATH=$PATH:$GOPATH/bin
-
-# --------------------------------
-# ----------- rbenv --------------
-# --------------------------------
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
-
-# --------------------------------
-# ----------- nodebrew -----------
-# --------------------------------
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^]' peco-src
