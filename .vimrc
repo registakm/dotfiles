@@ -1,27 +1,83 @@
-" Configuration file for vim
-set modelines=0		" CVE-2007-2438
+set nocompatible
+
+" # bundle 下のモジュール読み込み
+set runtimepath+=~/.vim/bundle/vim-coffee-script
+set runtimepath+=~/.vim/bundle/nerdtree
+set runtimepath+=~/.vim/bundle/neocomplcache.vim
+
+" # neocomplcache.vim
+" ## Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+
+" ## Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+
+" ## Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+
+" ## Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+endfunction
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+" # 検索
+" ## 大文字小文字を区別しない, 大文字小文字が両方含まれている場合は区別する
+set ignorecase
+set smartcase
+
+" ## 強調表示
+set hlsearch
+
+" # 表示
+" ## 行番号表示
+set number
+
+" ## カーソル位置
+set ruler
+
+" ## カーソル行ハイライト
+set cursorline
+
+" ## ステータス行
+set laststatus=2
+
+" ## 括弧の対応表示
+set showmatch
+
+" ## スクロール時の視界
+set scrolloff=16
+
+" ## シンタックスハイライト
 syntax on
 
-"モード表示
-set showmode
-"行番号を表示する
-set number
-"閉じ括弧が入力されたとき、対応する括弧を表示する
-set showmatch
-"新しい行のインデントを現在行と同じにする
+" # tab & indent
+" ## tab を space に置換
+set expandtab
+
+" ## オートインデント
 set autoindent
-"編集中のファイル名を表示
-set title
-"タブは半角4文字分のスペース
-set ts=4 sw=4 sts=0
+set smartindent
 
+" ## タブ幅
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible " Use Vim defaults instead of 100% vi compatibility
-set backspace=2 " more powerful backspacing
-
-" Don't write backup file if vim is being called by "crontab -e"
-au BufWrite /private/tmp/crontab.* set nowritebackup
-" Don't write backup file if vim is being called by "chpass"
-au BufWrite /private/etc/pw.* set nowritebackup
+" # キーバインド
+" ## NERDTree
+nnoremap <C-t> :NERDTreeToggle<Enter>
