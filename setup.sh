@@ -1,5 +1,4 @@
 #!/bin/sh
-DOTFILES=$(cd $(dirname $0) && pwd)
 
 FILELIST='
 .vim
@@ -14,30 +13,29 @@ FILELIST='
 
 # create local settig file
 cd ~
-mkdir bin
 touch ~/.vimrc.local
 touch ~/.gitconfig.local
 
 # stash old file
-if [ ! -e ~/old_files ]; then
-    mkdir ~/old_files
-    for FILE in ${FILELIST};
-    do
-        mv ~/${FILE} ~/old_files/
-    done
-fi
+# if [ ! -e ~/old_files ]; then
+#     mkdir ~/old_files
+#     for FILE in ${FILELIST};
+#     do
+#         mv ~/${FILE} ~/old_files/
+#     done
+# fi
 
 # create symboliclink
 for FILE in ${FILELIST};
 do
     rm -rf ~/${FILE}
-    ln -Fis ~/$DOTFILES/${FILE} ~/${FILE}
+    ln -Fis ~/.dotfiles/${FILE} ~/${FILE}
 done
 
 
 # submodule update
 # ----------------------------------------------------------------------
-cd $DOTFILES
+cd ~/.dotfiles
 git submodule update --init --recursive
 cd - > /dev/null
 
