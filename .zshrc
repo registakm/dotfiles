@@ -71,7 +71,7 @@ bindkey "^N" history-beginning-search-forward-end
 # --------------------------------
 alias ls="ls -GAF"
 alias ll="ls -l"
-
+alias gs='git status --short --branch'
 # --------------------------------
 # -------------- go --------------
 # --------------------------------
