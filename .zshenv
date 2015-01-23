@@ -16,5 +16,5 @@ fi
 # --------------------------------
 # -------------- go --------------
 # --------------------------------
-export GOPATH=${HOME}
-export PATH=$GOPATH/bin:$PATH
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=${HOME}/.go
