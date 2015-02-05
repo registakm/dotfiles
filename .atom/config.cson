@@ -1,0 +1,51 @@
+"*":
+  "exception-reporting":
+    userId: "4091fb18-a130-76bf-f62a-ac6fc62ff049"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "3051bdf0699387fee9757759f306aac38dc9f1e1"
+  editor:
+    fontFamily: "Ricty"
+    fontSize: 15
+    showInvisibles: true
+    showIndentGuide: true
+    softWrap: true
+    invisibles: {}
+  core:
+    followSymlinks: true
+    disabledPackages: [
+      "vim-mode"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "monokai"
+    ]
+  "spell-check":
+    grammars: [
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+    ]
+  autocomplete:
+    includeCompletionsFromAllBuffers: true
+  minimap:
+    plugins:
+      "git-diff": true
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+  emmet: {}
+  linter:
+    showErrorInline: false
+    statusBar: "Show error of the selected line"
+  "linter-jshint":
+    jshintExecutablePath: "/Users/A13230/.nodebrew/current/bin/jshint"
+  "fancy-new-file":
+    showFilesInAutoComplete: true
+    caseSensitiveAutoCompletion: true
+    suggestCurrentFilePath: true
+  "advanced-new-file":
+    suggestCurrentFilePath: true
+    showFilesInAutoComplete: true
+    caseSensitiveAutoCompletion: true
+  script: {}

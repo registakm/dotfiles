@@ -1,15 +1,15 @@
 #!/bin/sh
 
 FILELIST='
+.atom
+.config
 .vim
-.gitignore
+.zsh.d
 .gitconfig
+.gitignore
 .vimrc
 .zshrc
 .zshenv
-.zsh.d
-.config
-.atom
 '
 
 if [! -d ~/.dotfiles/.vim ];
