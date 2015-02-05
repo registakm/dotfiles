@@ -23,13 +23,13 @@ touch ~/.vimrc.local
 touch ~/.gitconfig.local
 
 # stash old file
-# if [ ! -e ~/old_files ]; then
-#     mkdir ~/old_files
-#     for FILE in ${FILELIST};
-#     do
-#         mv ~/${FILE} ~/old_files/
-#     done
-# fi
+if [ ! -e ~/old_files ]; then
+    mkdir ~/old_files
+    for FILE in ${FILELIST};
+    do
+        [ -e ~/${FILE} ] && mv ~/${FILE} ~/old_files/
+    done
+fi
 
 # create symboliclink
 for FILE in ${FILELIST};
