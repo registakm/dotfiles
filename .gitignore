@@ -15,7 +15,6 @@
 !/.gitignore
 !/.gitconfig
 !/.gitmodules
-!/.git-completion.bash
 !/.zshrc
 !/.zshenv
 !/.zsh.d

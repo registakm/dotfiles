@@ -12,6 +12,11 @@ FILELIST='
 .atom
 '
 
+if [! -d ~/.dotfiles/.vim ];
+  then
+    mkdir ~/.dotfiles/.vim
+fi
+
 # create local settig file
 cd ~
 touch ~/.vimrc.local
