@@ -9,6 +9,7 @@ FILELIST='
 .zshenv
 .zsh.d
 .config
+.atom
 '
 
 # create local settig file
@@ -29,7 +30,7 @@ touch ~/.gitconfig.local
 for FILE in ${FILELIST};
 do
     rm -rf ~/${FILE}
-    ln -Fis ~/.dotfiles/${FILE} ~/${FILE}
+    ln -fis ~/.dotfiles/${FILE} ~/${FILE}
 done
 
 
