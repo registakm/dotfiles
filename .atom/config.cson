@@ -49,3 +49,5 @@
     showFilesInAutoComplete: true
     caseSensitiveAutoCompletion: true
   script: {}
+  "git-plus":
+    gitPath: "/usr/local/bin/git"

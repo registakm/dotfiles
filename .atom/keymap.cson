@@ -16,9 +16,5 @@
 #   'ctrl-P': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
 #
-
-'body':
-  'alt-cmd-left': 'pane:split-left'
-
 '.autocomplete-plus input.hidden-input':
   'enter': 'autocomplete-plus:confirm'
