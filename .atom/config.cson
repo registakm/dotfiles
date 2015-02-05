@@ -37,7 +37,7 @@
   emmet: {}
   linter:
     showErrorInline: false
-    statusBar: "Show error of the selected line"
+    statusBar: "Show error if the cursor is in range"
   "linter-jshint":
     jshintExecutablePath: "/Users/A13230/.nodebrew/current/bin/jshint"
   "fancy-new-file":

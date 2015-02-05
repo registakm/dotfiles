@@ -28,3 +28,4 @@
 /.atom/storage
 /.atom/packages
 /.atom/.node-gyp
+/.atom/projects.cson
