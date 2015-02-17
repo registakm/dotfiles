@@ -44,10 +44,6 @@
     showFilesInAutoComplete: true
     caseSensitiveAutoCompletion: true
     suggestCurrentFilePath: true
-  "advanced-new-file":
-    suggestCurrentFilePath: true
-    showFilesInAutoComplete: true
-    caseSensitiveAutoCompletion: true
   script: {}
   "git-plus":
     gitPath: "/usr/local/bin/git"

@@ -29,3 +29,5 @@
 /.atom/packages
 /.atom/.node-gyp
 /.atom/projects.cson
+/.atom/.apm
+/.config/configstore
