@@ -38,8 +38,11 @@
   linter:
     showErrorInline: false
     statusBar: "Show error if the cursor is in range"
+    ignoredLinterErrors: [
+      "jshint"
+    ]
   "linter-jshint":
-    jshintExecutablePath: "/Users/A13230/.nodebrew/current/bin/jshint"
+    jshintExecutablePath: "/Users/murayamakazuki/.nodebrew/current/bin/jshint"
   "fancy-new-file":
     showFilesInAutoComplete: true
     caseSensitiveAutoCompletion: true
@@ -47,3 +50,9 @@
   script: {}
   "git-plus":
     gitPath: "/usr/local/bin/git"
+  react: {}
+  "atom-alignment": {}
+  "atom-beautify": {}
+  "project-manager": {}
+  "linter-ruby":
+    rubyExecutablePath: "/Users/murayamakazuki/.rbenv/shims/ruby"
