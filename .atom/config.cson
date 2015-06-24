@@ -37,7 +37,7 @@
   emmet: {}
   linter:
     showErrorInline: false
-    statusBar: "Show error if the cursor is in range"
+    statusBar: "Show error of the selected line"
     ignoredLinterErrors: [
       "jshint"
     ]
